@@ -122,6 +122,10 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
+static const char *termcmd[]  = { "alacritty", NULL };
+static const char *emacscmd[] = { "emacsclient", "-c", "-a emacs", NULL };
+static const char *zoterocmd[] = { "zotero", NULL };
+static const char *googleChromecmd[] = { "google-chrome-stable", NULL };
 
 static Key keys[] = {
     /* modifier                         key         function        argument */
@@ -138,10 +142,13 @@ static Key keys[] = {
         SHCMD("maim | xclip -selection clipboard -t image/png")},
     {MODKEY,                            XK_u,       spawn,
         SHCMD("maim --select | xclip -selection clipboard -t image/png")},
+    { ControlMask|ShiftMask,              XK_p,      spawn,          SHCMD("screenshot") },
 
 
     { MODKEY,                           XK_c,       spawn,          SHCMD("rofi -show drun") },
-    { MODKEY,                           XK_Return,  spawn,          SHCMD("st")},
+
+    { MODKEY,             XK_Return,     spawn,                  {.v = termcmd } },
+    //{ MODKEY,                           XK_Return,  spawn,          SHCMD("st")},
     // { MODKEY,                           XK_Return, spawn,            SHCMD("st_pad && st")},
     
 
