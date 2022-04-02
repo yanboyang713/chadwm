@@ -1,0 +1,15 @@
+#!/bin/sh
+###############################################################
+## AUTHOR Name: Boyang Yan                                   ##
+## KEYWORDs: windows manager                                 ##
+## PURPOSE: Install and set-up Meta WM                       ##
+## ENVIRONment: mac, Linux                                   ##
+## COMMENTs:                                                 ##
+## Last Modified Date: 03.04.2022                            ##
+###############################################################
+
+## Install required package
+PACMANINSTALL="sudo pacman --noconfirm --needed -S"
+sudo pkgfile --update
+echo "Project ROOT DIR: $1";
+$PACMANINSTALL - < $1/packageInstall/ArchLinux/WM/pacman
