@@ -8,8 +8,19 @@
 ## Last Modified Date: 03.04.2022                            ##
 ###############################################################
 
+LN="ln -vsf"
+SLN="sudo ln -vsf"
+CURDIR=$(dirname "${BASH_SOURCE[0]}")
 ## Install required package
 PACMANINSTALL="sudo pacman --noconfirm --needed -S"
 sudo pkgfile --update
 echo "Project ROOT DIR: $1";
 $PACMANINSTALL - < $1/packageInstall/ArchLinux/WM/pacman
+
+## Set up rofi
+echo $CURDIR
+$LN $CURDIR/rofi $HOME/.config
+
+## Set up EWW
+
+
