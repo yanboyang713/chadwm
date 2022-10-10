@@ -1,4 +1,4 @@
-@import "scss/themes/everblush.scss";
+@import "scss/themes/onedark.scss";
 
 // header
 @import "scss/header/statusBtns.scss";
@@ -12,7 +12,7 @@
 @import "scss/footer/btns.scss";
 @import "scss/footer/backlight.scss";
 
-.eww {
+.eww > * {
   padding: 1rem;
   padding-top: .6rem;
   background-color: $black;
